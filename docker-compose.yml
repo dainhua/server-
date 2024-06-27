@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  spigot:
+    image: nimmis/spigot
+    container_name: test
+    ports:
+      - "25565:25565"
+    environment:
+      - EULA=true
+      - SPIGOT_VER=1.16.5
+      - MC_MAXMEM=8192m
+      - MC_MINMEM=1024m
+    restart: always
+    volumes:
+      - ./data:/minecraft
